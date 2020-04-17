@@ -6,7 +6,7 @@ int main(int argc, char **argv)
     int strsSize = argc;
     char **strs = argv;
     char *str = longestCommonPrefix(strs,strsSize);
-    printf("%d %s\n",strsSize,str);
+    printf("%d  %s\n",strsSize,str);
     return 0;
 }
 static char * longestCommonPrefix(char ** strs, int strsSize){
