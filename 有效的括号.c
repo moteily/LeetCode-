@@ -1,49 +1,50 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-int isValid(char * s);
-int main(int argc,char **argv)
+int isValid(char *s);
+int main(int argc, char **argv)
 {
     char *str;
-    scanf("%s",str);
+    scanf("%s", str);
     int ret = isValid(str);
     //char *str = "()()";
     char *p = str;
-    printf("括号是否匹配: %d \n",ret);
+    printf("括号是否匹配: %d \n", ret);
     return 0;
 }
-int isValid(char * s){
+int isValid(char *s)
+{
     int i = 0;
     char *p = s;
-    char *base = (char *)malloc(sizeof(char)*10000);
+    char *base = (char *)malloc(sizeof(char) * 10000);
     char *top = base;
     //if(p[0]==')'||p[0]==']'||p[0]=='}')
-      //  return false;
-    while(p[i]!='\0')
-    {   
-        if(top < base)
+    //  return false;
+    while (p[i] != '\0')
+    {
+        if (top < base)
             return 0;
-        if(p[i] == '('||p[i] == '['||p[i] == '{') //入栈
+        if (p[i] == '(' || p[i] == '[' || p[i] == '{') //入栈
         {
             *top = p[i];
             top++;
         }
         else
         {
-            if(p[i] == ')')
+            if (p[i] == ')')
             {
-                if((top != base) && (*(top-1) == '('))   //top！=base为了防止非法访问栈底再往下的数据
-                    top = top - 1;//退栈
+                if ((top != base) && (*(top - 1) == '(')) //top！=base为了防止非法访问栈底再往下的数据
+                    top = top - 1;                        //退栈
                 else
                 {
                     *top = p[i];
                     top++; //入栈
                 }
             }
-            else if(p[i] == ']' )
+            else if (p[i] == ']')
             {
-                if((top != base) && *(top-1) == '[')
-                    top = top - 1;//退栈
+                if ((top != base) && *(top - 1) == '[')
+                    top = top - 1; //退栈
                 else
                 {
                     *top = p[i];
@@ -52,18 +53,18 @@ int isValid(char * s){
             }
             else
             {
-                if((top != base) && *(top-1) == '{')
-                    top = top - 1;//退栈
+                if ((top != base) && *(top - 1) == '{')
+                    top = top - 1; //退栈
                 else
                 {
                     *top = p[i];
                     top++; //入栈
-                }      
+                }
             }
         }
         i++;
     }
-    if(top == base)
+    if (top == base)
         return 1;
     else
         return 0;

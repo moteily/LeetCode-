@@ -1,9 +1,6 @@
 //l1 l2 为头指针，且头指针有数据。
-
 struct ListNode *mergeTwoLists(struct ListNode *l1, struct ListNode *l2)
 {
-    //struct ListNode *l3 = (struct ListNode *)malloc(sizeof(l1));
-    //struct ListNode *p = l3;
     if (l1 == NULL && l2 == NULL)
         return NULL;
     else if (l1 == NULL && l2 != NULL)
@@ -27,11 +24,6 @@ struct ListNode *mergeTwoLists(struct ListNode *l1, struct ListNode *l2)
             p1 = l1->next;
             p2 = l2;
         }
-        //    struct ListNode *p3 = l1;
-        //    struct ListNode *l3 = l1; //记录头指针位置
-        //    struct ListNode *p1 = l1->next;
-        //    struct ListNode *p2 = l2->next;
-
         while ((p1 != NULL) && (p2 != NULL))
         {
             if (p1->val >= p2->val)
