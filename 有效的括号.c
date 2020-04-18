@@ -58,10 +58,8 @@ int isValid(char * s){
                 {
                     *top = p[i];
                     top++; //入栈
-                }
-                
+                }      
             }
-
         }
         i++;
     }
