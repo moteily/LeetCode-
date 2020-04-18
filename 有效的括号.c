@@ -16,7 +16,7 @@ int isValid(char *s)
 {
     int i = 0;
     char *p = s;
-    char *base = (char *)malloc(sizeof(char) * 10000);
+    char *base = (char *)malloc(sizeof(char)*30);//栈空间30
     char *top = base;
     //if(p[0]==')'||p[0]==']'||p[0]=='}')
     //  return false;
