@@ -14,7 +14,6 @@ int main(int argc, char **argv)
 }
 int removeElement(int *nums, int numsSize, int val)
 {
-
     int i = 0, j = 0, count1 = 0;
     int flag = 0;
     if (numsSize == 0)
@@ -55,8 +54,5 @@ int removeElement(int *nums, int numsSize, int val)
             //flag = 1;
         }
     }
-    //  if(flag==1)
-    //  return numsSize;
-    //  else
     return i;
 }
